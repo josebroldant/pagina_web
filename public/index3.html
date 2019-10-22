@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SSM LOGIN</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <!-- Include Plotly.js -->
+    <script src = "https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src = "js/bootstrap.min.js"> </script>
+</head>
+
+<script>
+    function redirigir(){
+      window.location="http://localhost:3000/index.html";
+        }  
+</script>
+
+  <body style="background-color: rgb(63, 60, 60)" method="GET" action="/home2">
+    <header>
+        <div class="topnav">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" style="width:40px;">
+            </a>
+            
+              <a style="color:whitesmoke">SHOE SHINING MACHINE</a>
+            
+            <div class="topnav-right" id="login">
+              <!--
+                <a><input type="submit" value="Logout" method="GET" action="/home" class="botonlogout"></a>
+              -->
+                <a><input type="submit" value="Logout" onclick="redirigir()" class="botonlogout"></a>            
+            </div>  
+      </div>  
+    </header> 
+  <p>
+    <strong> <h2 id = "graftitle" style="color: white"> Gráfica JSON </h2></strong>
+  </p>
+  <div id="plotly-chart">
+    
+  </div>
+
+  <script>
+    function redirigir(){
+              window.location="http://localhost:3000/index.html";
+         }
+  </script>
+
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    // From: https://www.w3schools.com/js/js_json_parse.asp
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var plotly_vars = JSON.parse(this.responseText);
+        Plotly.newPlot('plotly-chart', plotly_vars['data'], plotly_vars['layout']);
+      }
+    };
+    xmlhttp.open("GET", "plotly_vars.json", true);
+    xmlhttp.send();
+
+  </script>
+        
+    <footer class = "navbar fixed-bottom">
+        <div class = "container">
+          
+          <p>© 2019 Electronic Design by José Roldán and Giovanny Rodríguez | All rights Reserved. </p>
+
+        </div>
+  </footer>
+  
+
+
+  </body>
+   
+</html>

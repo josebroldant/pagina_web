@@ -1,0 +1,27 @@
+{
+  "name": "proy",
+  "version": "1.0.0",
+  "description": "shoe shining machine web",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "client": "0.0.1",
+    "connect-timeout": "^1.9.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-store": "0.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.2.4",
+    "mongoose": "^5.4.21",
+    "server": "^1.0.18",
+    "session": "^0.1.0",
+    "session-file-store": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jose y gio",
+  "license": "ISC"
+}

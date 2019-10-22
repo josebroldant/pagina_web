@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SSM LOGIN</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    
+</head>
+  <body style="background-color: rgb(63, 60, 60)">
+      <header>
+          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+              <!-- Links -->
+              <ul class="navbar-nav">
+                <a class="navbar-brand" href="#">
+                  <img src="logos.png" alt="Logo" style="width:40px;">
+                </a>
+                <h1 style="color: white;">Shoe Shinning Machine V1.0</h1>
+              </ul>
+            
+            </nav>
+        </header>
+        <div>
+            <center>
+            <h1 style="color: white;">FORMULARIO DE REGISTRO</h1>
+            </center>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+          function registrodeusuario(){
+              /*
+            var text_to_save=document.getElementById('textfield').value;
+            localStorage.setItem("text", text_to_save);
+            */
+            var nombre = document.getElementById("nombre").value;
+            localStorage.setItem("user","nombre");
+            var correo = document.getElementById("correo").value;
+            localStorage.setItem("mail","correo");
+            var fecha = document.getElementById("fechadenac").value;
+            localStorage.setItem("birth","fecha");
+            var sexo = document.getElementById("sexo").value;
+            localStorage.setItem("sex","sexo");
+            var nomuser = document.getElementById("nombredeuser").value;
+            localStorage.setItem("nickname","nomuser");
+            var contra = document.getElementById("contra").value;
+            localStorage.setItem("pass","contra");
+            /*
+            if(nomuser == localStorage.getItem("nombredeuser")){
+                alert("Ese nombre de usuario ya existe, intente con otro");
+            }
+            else{
+                window.location("http://localhost:8080/index.html");
+            }
+            window.location("http://localhost:8080/index.html");
+            */
+            window.location="http://localhost:3000/index.html";
+        }
+      </script>
+    <div id="login">
+        <form name='form-login' method="GET" action="/home2">
+          <span class="fontawesome-user"></span>
+            <input type="text" id="nombre" placeholder="Nombre">
+          <span class="fontawesome-lock"></span>
+            <input type="text" id="correo" placeholder="Correo">
+          <span class="fontawesome-lock"></span>
+            <input type="text" id="fechadenac" placeholder="Fecha de nacimiento">
+          <span class="fontawesome-lock"></span>
+            <input type="text" id="sexo" placeholder="Sexo">
+          <span class="fontawesome-lock"></span>
+            <input type="text" id="nombredeuser" name="User" placeholder="Nombre de usuario">
+          <span class="fontawesome-lock"></span>  
+            <input type="password" id="contra" name="Pass" placeholder="Contraseña">
+          
+            <input type="button" value="Registrarse" onclick="registrodeusuario()">
+           
+    </form>
+    
+    <footer class = "navbar fixed-bottom">
+        <div class = "container">
+          
+          <p>© 2019 Electronic Design by José Roldán and Giovanny Rodríguez | All rights Reserved. </p>
+
+        </div>
+  </footer>
+  <script src = js/bootstrap.min.js>
+
+  </script>
+  </body>
+   
+</html>
