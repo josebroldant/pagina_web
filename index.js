@@ -31,6 +31,7 @@ var userspass = ['pass']
    
 });*/
 
+
 router.post('/users', (req, res) => {
     var usuario = req.body.user;
     var contra = req.body.pass;
@@ -72,13 +73,17 @@ app.use(express.static('public/css'));//acceso a css
 app.use(express.static('public/js'));//acceso a js
 console.log('Página habilitada');
 
-const uri = "mongodb+srv://ssmcluster-aobqi.mongodb.net/test";
+
+const uri = "mongodb+srv://ssmcluster-aobqi.mongodb.net/test";//server adresss for terminal
+
 mongoose.connect(uri, { useNewUrlParser: true })
     .then(() => {
         console.log("Successfuly conected");
     })
     .catch((err) => console.error(err));
 
+
+/*
 //data declaration
 class datos{
     constructor(datos) {
@@ -105,6 +110,7 @@ app.post('mongodb://[jose.roldan@correo.usa.edu.co:#Exeron97@]localhost[:3000][/
     res.send(llenado);
     console.log("Posted succesfully");
 });
+*/
 
 // const MongoClient = require('mongodb').MongoClient;
 // const client = new MongoClient(uri, { useNewUrlParser: true });
