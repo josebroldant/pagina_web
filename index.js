@@ -19,6 +19,8 @@ var router = express.Router();
 var users = ['nickname']
 var userspass = ['pass']
 
+//LOGIN LOGIC
+
 /*app.get('/home1', function(req,res){
     var usuario = req.query.user;
     var contra  = req.query.pass;
@@ -47,6 +49,8 @@ router.post('/users', (req, res) => {
 
 });
 
+//NAVENGACION ENTRE PAGINAS
+
 app.use(router);
 
 router.get('/home', function (req, res) {
@@ -61,7 +65,7 @@ router.get('/home3', function (req, res) {
     res.sendfile(__dirname + '/public/index3.html');
 });
 
-//app.use(timeout('10s'));
+//INAGURACION DEL WEBSERVER EN EL PUERTO 3000
 
 app.listen(3000, function () {
     console.log("Ready");
@@ -73,8 +77,10 @@ app.use(express.static('public/css'));//acceso a css
 app.use(express.static('public/js'));//acceso a js
 console.log('Página habilitada');
 
+//CONEXION A MONGODB
 
-const uri = "mongodb+srv://ssmcluster-aobqi.mongodb.net/test";//server adresss for terminal
+//const uri = "mongodb+srv://ssmcluster-aobqi.mongodb.net/test";//server adresss for terminal
+const uri = "mongodb+srv://A7XENON:#Exeron97@ssmcluster-aobqi.mongodb.net/test?retryWrites=true&w=majority";//server adresss for terminal
 
 mongoose.connect(uri, { useNewUrlParser: true })
     .then(() => {
@@ -82,7 +88,29 @@ mongoose.connect(uri, { useNewUrlParser: true })
     })
     .catch((err) => console.error(err));
 
+var Schema = mongoose.Schema;
 
+var SomeModelSchema = new Schema({
+    voltage: String,
+    current: String,
+    power: String,
+    state: String,
+    level: String
+});
+
+//db.collection.insert(SomeModelSchema);
+
+var connectionString = "mongodb+srv://A7XENON:#Exeron97@ssmcluster-aobqi.mongodb.net/test?retryWrites=true&w=majority";
+
+        var client = new MongoClient(connectionString);
+        var database = client.GetDatabase("variables");  
+
+        text = System.IO.File.ReadAllText("package.JSON");
+
+        var document = BsonSerializer.Deserialize(text);
+        var collection = database.GetCollection("container");
+        await collection.InsertOneAsync(document);
+    
 /*
 //data declaration
 class datos{
