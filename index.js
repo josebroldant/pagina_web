@@ -33,7 +33,7 @@ var userspass = ['pass']
    
 });*/
 
-
+/*
 router.post('/users', (req, res) => {
     var usuario = req.body.user;
     var contra = req.body.pass;
@@ -48,9 +48,10 @@ router.post('/users', (req, res) => {
     }
 
 });
+*/
 
-//NAVENGACION ENTRE PAGINAS
-
+//NAVEGACION ENTRE PAGINAS
+/*
 app.use(router);
 
 router.get('/home', function (req, res) {
@@ -64,6 +65,7 @@ router.get('/home2', function (req, res) {
 router.get('/home3', function (req, res) {
     res.sendfile(__dirname + '/public/index3.html');
 });
+*/
 
 //INAGURACION DEL WEBSERVER EN EL PUERTO 3000
 
@@ -76,6 +78,11 @@ app.use(express.static('public'));//crear carpeta llamada public
 app.use(express.static('public/css'));//acceso a css
 app.use(express.static('public/js'));//acceso a js
 console.log('Página habilitada');
+
+app.get('/', (request, response) => {
+    console.log("izi");
+});
+/*
 
 //CONEXION A MONGODB
 
@@ -110,6 +117,8 @@ var connectionString = "mongodb+srv://A7XENON:#Exeron97@ssmcluster-aobqi.mongodb
         var document = BsonSerializer.Deserialize(text);
         var collection = database.GetCollection("container");
         //await collection.InsertOneAsync(document);
+
+*/        
     
 /*
 //data declaration
