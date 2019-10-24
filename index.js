@@ -109,7 +109,7 @@ var connectionString = "mongodb+srv://A7XENON:#Exeron97@ssmcluster-aobqi.mongodb
 
         var document = BsonSerializer.Deserialize(text);
         var collection = database.GetCollection("container");
-        await collection.InsertOneAsync(document);
+        //await collection.InsertOneAsync(document);
     
 /*
 //data declaration
