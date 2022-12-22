@@ -10,7 +10,7 @@
     "express": "^4.17.1",
     "express-session": "^1.15.6",
     "express-store": "0.0.4",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "method-override": "^3.0.0",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.6",
